@@ -27,15 +27,14 @@ window.onload = () => {
 	// 	max = Double.parseDouble(s);
 	// }
 
-	var text = document.getElementById('here');
-	text.innerHTML = "Fitn | T D | Talent                                      | Maitrise";
-	s = "=====+=====+";
-	for(var i = 0; i < 91; i++){
-		if(i == 45) s += "+";
-		else s += "=";
-	}
-	text.innerHTML += s;
-
+	var text = 	"<table>" +
+					"<tr>" +
+						"<th class='larger'><b> Fitn </b></th>" +
+						"<th class='larger'><b> T </b></th>" +
+						"<th class='larger'><b> D </b></th>" +
+						"<th><b> Talent </b></th>" +
+						"<th><b> Maitrise </b></th>" +
+					"</tr>";
 	console.log("Creation des cartes");
 	for(var i = 0; i < n; i++) {
 		do {
@@ -47,6 +46,8 @@ window.onload = () => {
 				|| fitness < min 
 				|| fitMaitrise < 0 
 				|| Math.abs(fitTalent/fitMaitrise) > 1/maiSurTal && fitMaitrise > 0);
-		text.innerHTML += fitness.toPrecision(3) + " | " + c.toString();
+		text += c.toHTML();
 	}
+	text += "</table>";
+	document.getElementById('here').innerHTML = text;
 }

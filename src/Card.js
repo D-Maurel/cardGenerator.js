@@ -50,11 +50,11 @@ class Card {
 		var str = "", strTalent = "", strMaitrise = "";
 		var i, l;
 		for(i = 0; i < 5; i++){
-			if(!talent[i] == ""){
+			if(!this.talent[i] == ""){
 				strTalent += this.talent[i] + " ";
 				if(i == 2) strTalent = strTalent + ": "; 
 			}
-			if(!maitrise[i] == ""){
+			if(!this.maitrise[i] == ""){
 				strMaitrise += this.maitrise[i] + " ";
 				if(i == 2) strMaitrise = strMaitrise+ ": "; 
 			}
@@ -69,6 +69,29 @@ class Card {
 			strMaitrise += "-";
 		}
 		str = this.technique + " " + this.domination + " | " + strTalent + "| " + strMaitrise;
+		return str;
+	}
+
+	toHTML(){
+		var str = "", strTalent = "", strMaitrise = "";
+		var i, l;
+		for(i = 0; i < 5; i++){
+			if(!this.talent[i] == ""){
+				strTalent += this.talent[i] + " ";
+				if(i == 2) strTalent = strTalent + ": "; 
+			}
+			if(!this.maitrise[i] == ""){
+				strMaitrise += this.maitrise[i] + " ";
+				if(i == 2) strMaitrise = strMaitrise+ ": "; 
+			}
+		}
+		str = 	"<tr>" +
+					"<td>" + this.getFitness().toPrecision(3) + "</td>" +
+					"<td>" + this.technique + "</td>" +
+					"<td>" + this.domination + "</td>" +
+					"<td>" + strTalent + "</td>" +
+					"<td>" + strMaitrise + "</td>";
+				"</tr>";
 		return str;
 	}
 }

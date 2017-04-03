@@ -22,10 +22,8 @@ class CardGenerator {
 			indexEffet = randomInt(this.data.keysEffets.length, 0);
 			card.talent[3] = this.data.keysEffets[indexEffet];
 			c3 = card.talent[3];
-		} while (c3 == "--" && randomDouble() > pEmpty);
-		console.log(1);
+		} while (c3 == "--" && randomDouble() > this.pEmpty);
 		if(randomDouble() < this.pContexte && c3 != "--"){
-			console.log(2);
 			do{
 				indexContexte = randomInt(this.data.keysContextes.length, 0);
 				card.talent[2] = this.data.keysContextes[indexContexte];
@@ -40,7 +38,6 @@ class CardGenerator {
 		} else {
 			card.talent[2] = "";
 		}
-		console.log(3);
 		if(randomDouble() < this.pCout 
 				&& c3 != "--" || c2 == "Contrecoup"){
 			indexCout = randomInt(this.data.keysCout.length, 0);
@@ -48,7 +45,6 @@ class CardGenerator {
 		} else {
 			card.talent[0] = "";
 		}
-		console.log(4);
 		if(randomDouble() < this.pCondition && c3 != "--"){
 			do {
 				indexCondition = randomInt(this.data.keysConditions.length, 0);
@@ -58,7 +54,6 @@ class CardGenerator {
 		} else {
 			card.talent[1] = "";
 		}
-		console.log(5);
 		if(this.data.mapEffets.get(card.talent[3]).needValue){
 			card.talent[4] = randomInt(4,1) + "";
 		} else {
@@ -70,12 +65,8 @@ class CardGenerator {
 			indexEffet = randomInt(this.data.keysEffets.length, 0);
 			card.maitrise[3] = this.data.keysEffets[indexEffet];
 			c3 = card.maitrise[3];
-			console.log(c3);
-			console.log(this.data.mapEffets);
-			console.log(this.data.mapEffets.get(c3));
 		}while(!this.data.mapEffets.get(c3).isMaitrisable
 				|| (c3 == "--" && randomDouble() > this.pEmpty));
-		console.log(6);
 		if(randomDouble() < this.pContexte && !c3 == "--"){
 			do{
 				indexContexte = randomInt(this.data.keysContextes.length, 0);
@@ -87,7 +78,6 @@ class CardGenerator {
 		} else {
 			card.maitrise[2] = "";
 		}
-		console.log(7);
 		if(randomDouble() < this.pCout 
 				&& !(c3 == "--") || c2 == "Contrecoup"){
 			indexCout = randomInt(this.data.keysCout.length, 0);
@@ -95,7 +85,6 @@ class CardGenerator {
 		} else {
 			card.maitrise[0] = "";
 		}
-		console.log(8);
 		if(randomDouble() < this.pCondition && !c3 == "--"){
 			do{
 				indexCondition = randomInt(this.data.keysConditions.length, 0);
@@ -105,7 +94,6 @@ class CardGenerator {
 		} else {
 			card.maitrise[1] = "";
 		}
-		console.log(9);
 		if(this.data.mapEffets.get(c3).needValue){
 			card.maitrise[4] = randomInt(4,1) + "";
 		} else {

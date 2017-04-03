@@ -4,7 +4,6 @@ class Data {
 		this.costDomination = 2.2;
 
 		this.mapEffets = new Map();
-		console.log(new Effet("+D", true, true, true, 2.2));
 		this.mapEffets.set("+D", new Effet("+D", true, true, true, 2.2));
 		this.mapEffets.set("-D", new Effet("-D", true, true, true, 2.2));
 		this.mapEffets.set("+T", new Effet("+T", false, true, true, 1.3));
