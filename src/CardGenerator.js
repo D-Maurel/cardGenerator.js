@@ -66,15 +66,15 @@ class CardGenerator {
 		}	
 		
 		// Generation de la maitrise
-		//do{
+		do{
 			indexEffet = randomInt(this.data.keysEffets.length, 0);
 			card.maitrise[3] = this.data.keysEffets[indexEffet];
 			c3 = card.maitrise[3];
 			console.log(c3);
 			console.log(this.data.mapEffets);
 			console.log(this.data.mapEffets.get(c3));
-		//}while(!this.data.mapEffets.get(c3).isMaitrisable
-		//		|| (c3 == "--" && randomDouble() > this.pEmpty));
+		}while(!this.data.mapEffets.get(c3).isMaitrisable
+				|| (c3 == "--" && randomDouble() > this.pEmpty));
 		console.log(6);
 		if(randomDouble() < this.pContexte && !c3 == "--"){
 			do{
