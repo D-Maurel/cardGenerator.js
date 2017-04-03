@@ -46,6 +46,7 @@ window.onload = () => {
 				|| fitness < min 
 				|| fitMaitrise < 0 
 				|| Math.abs(fitTalent/fitMaitrise) > 1/maiSurTal && fitMaitrise > 0);
+				console.log((fitness - fitMaitrise - fitTalent).toPrecision(3) + " / " + fitness.toPrecision(3));
 		text += c.toHTML();
 	}
 	text += "</table>";

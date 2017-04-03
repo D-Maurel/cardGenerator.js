@@ -10,7 +10,7 @@ class CardGenerator {
 	generateCard(){
 		console.log("generation d'une carte");
 		var indexCondition, indexContexte, indexCout, indexEffet;
-		var nV, C, sT, cT, e;
+		var nV, C, sT, cT, e, mF, pG;
 		var c3, c2 = "";
 		
 		var card = new Card();
@@ -33,13 +33,14 @@ class CardGenerator {
 				e = c2 == "";
 				sT = c3 == "Stop Talent";
 				cT = c3 == "Copie Talent";
-			} while (!e && (!(nV || C) || sT || cT));
-			// de base !nV && !(C ||Â e) || (st ||Â cT) && !e , loi de Morgan
+				mF = this.data.mapEffets.get(c3).modifFight;
+				pG = c2 == "par Glyphe";
+			} while (!e && (!(nV || C) || sT || cT) || mF && pG); // merci la loi de Morgan
 		} else {
 			card.talent[2] = "";
 		}
 		if(randomDouble() < this.pCout 
-				&& c3 != "--" || c2 == "Contrecoup"){
+				&& c3 != "--" && c2 != "Contrecoup"){
 			indexCout = randomInt(this.data.keysCout.length, 0);
 			card.talent[0] = this.data.keysCout[indexCout];
 		} else {
@@ -49,8 +50,9 @@ class CardGenerator {
 			do {
 				indexCondition = randomInt(this.data.keysConditions.length, 0);
 				card.talent[1] = this.data.keysConditions[indexCondition];
+				var c1 = card.talent[1];
 			} while (this.data.mapEffets.get(c3).modifFight &&
-					(card.talent[1] == "Victoire" || card.talent[1] == "Defaite"));
+					(c1 == "Victoire" || c1 == "Defaite"));
 		} else {
 			card.talent[1] = "";
 		}
