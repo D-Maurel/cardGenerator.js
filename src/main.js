@@ -26,14 +26,13 @@ window.onload = () => {
 	// } else {
 	// 	max = Double.parseDouble(s);
 	// }
-
 	var text = 	"<table>" +
 					"<tr>" +
-						"<th class='larger'><b> Fitn </b></th>" +
-						"<th class='larger'><b> T </b></th>" +
-						"<th class='larger'><b> D </b></th>" +
-						"<th><b> Talent </b></th>" +
-						"<th><b> Maitrise </b></th>" +
+						"<th class='larger'> Fitn </th>" +
+						"<th class='larger'> T </th>" +
+						"<th class='larger'> D </th>" +
+						"<th> Talent </th>" +
+						"<th> Maitrise </th>" +
 					"</tr>";
 	console.log("Creation des cartes");
 	for(var i = 0; i < n; i++) {
@@ -42,9 +41,9 @@ window.onload = () => {
 			fitness = c.getFitness();
 			fitTalent = c.getFitnessTalent();
 			fitMaitrise = c.getFitnessMaitrise();
-		} while(fitness > max 
-				|| fitness < min 
-				|| fitMaitrise < 0 
+		} while(fitness > max
+				|| fitness < min
+				|| fitMaitrise < 0
 				|| Math.abs(fitTalent/fitMaitrise) > 1/maiSurTal && fitMaitrise > 0);
 				console.log((fitness - fitMaitrise - fitTalent).toPrecision(3) + " / " + fitness.toPrecision(3));
 		text += c.toHTML();

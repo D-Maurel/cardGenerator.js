@@ -1,9 +1,20 @@
+body {
+    font-family: Arial;
+    color: #222;
+}
+
 table, th, td {
-    border: 1px solid black;
+    border: 1px solid #222;
     border-collapse: collapse;
+}
+td {
+    padding: 3px;
 }
 th {
     font-weight: bold;
+}
+table tr:first-child{
+    background: #ccc;
 }
 .larger {
     width: 40px;
