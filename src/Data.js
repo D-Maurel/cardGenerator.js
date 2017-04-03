@@ -1,15 +1,15 @@
 class Data {
 	constructor(){
 		this.costTechnique = 1.3;
-		this.costDomination = 2.2;
+		this.costDomination = 1.8;
 
 		this.mapEffets = new Map();
-		this.mapEffets.set("+D", new Effet("+D", true, true, true, 2.2));
-		this.mapEffets.set("-D", new Effet("-D", true, true, true, 2.2));
-		this.mapEffets.set("+T", new Effet("+T", false, true, true, 1.3));
-		this.mapEffets.set("-T", new Effet("-T", false, true, true, 1.3));
-		this.mapEffets.set("+R", new Effet("+R", true, true, false, 2));
-		this.mapEffets.set("-R", new Effet("-R", true, true, false, 2.2));
+		this.mapEffets.set("+D", new Effet("+D", true, true, true, this.costDomination));
+		this.mapEffets.set("-D", new Effet("-D", true, true, true, this.costDomination));
+		this.mapEffets.set("+T", new Effet("+T", false, true, true, this.costTechnique));
+		this.mapEffets.set("-T", new Effet("-T", false, true, true, this.costTechnique));
+		this.mapEffets.set("+R", new Effet("+R", true, true, false, 1.3));
+		this.mapEffets.set("-R", new Effet("-R", true, true, false, 1.5));
 		this.mapEffets.set("Stop Talent", new Effet("Stop Talent", false, false, true, 5));
 		this.mapEffets.set("Stop Maitrise", new Effet("Stop Maitrise", false, false, true, 4));
 		this.mapEffets.set("Fatigue", new Effet("Fatigue", false, true, true, 2));
@@ -19,8 +19,8 @@ class Data {
 		this.mapEffets.set("Copie Domination", new Effet("Copie Domination", true, false, true, 3));
 		this.mapEffets.set("Copie Talent", new Effet("Copie Talent", false, false, true, 3));
 		this.mapEffets.set("Copie Maitrise", new Effet("Copie Maitrise", true, false, false, 3));
-		this.mapEffets.set("Oppression", new Effet("Oppression", true, true, false, 6));
-		this.mapEffets.set("Pillage", new Effet("Pillage", true, true, false, 8));
+		this.mapEffets.set("Oppression", new Effet("Oppression", true, true, false, 5));
+		this.mapEffets.set("Pillage", new Effet("Pillage", true, true, false, 7));
 		this.mapEffets.set("Initiative", new Effet("Initiative", false, false, true, 6));
 		this.mapEffets.set("--", new Effet("--", true, false, false, 0));
 		this.keysEffets = Array.from(this.mapEffets.keys());

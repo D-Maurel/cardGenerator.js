@@ -1,6 +1,6 @@
 window.onload = () => {
-	var fitness = 0, fitTalent = 0, fitMaitrise = 0, maiSurTal = 2, c = null;
-	var n = 20, min = 23, max = 26;
+	var fitness = 0, fitTalent = 0, fitMaitrise = 0, maiSurTal = 1.5, c = null;
+	var n = 50, min = 23, max = 26;
 	var cg = new CardGenerator();
 
 	// System.out.prvar("Nombre de cartes Ã  gÃ©nÃ©rer (10 par dÃ©faut): ");
@@ -39,13 +39,14 @@ window.onload = () => {
 		do {
 			c = cg.generateCard();
 			fitness = c.getFitness();
-			fitTalent = c.getFitnessTalent();
-			fitMaitrise = c.getFitnessMaitrise();
+			fitTalent = c.talent.getFitness();
+			fitMaitrise = c.maitrise.getFitness();
+			fitCharac = fitness - fitMaitrise - fitTalent;
 		} while(fitness > max
 				|| fitness < min
 				|| fitMaitrise < 0
-				|| Math.abs(fitTalent/fitMaitrise) > 1/maiSurTal && fitMaitrise > 0);
-				console.log((fitness - fitMaitrise - fitTalent).toPrecision(3) + " / " + fitness.toPrecision(3));
+				|| (fitMaitrise - fitTalent) < fitMaitrise/maiSurTal && fitMaitrise > 0
+				|| fitCharac > 2/3*fitness);
 		text += c.toHTML();
 	}
 	text += "</table>";
