@@ -45,3 +45,5 @@ class Data {
 		this.keysCout = Array.from(this.mapCout.keys());
 	}
 }
+
+window.data = new Data();

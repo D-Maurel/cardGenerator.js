@@ -4,7 +4,7 @@ class Card {
 		this.domination = 0;
 		this.talent = new Capacite();
 		this.maitrise = new Capacite();
-		this.data = new Data();
+		this.data = window.data;
 	}
 
 	getFitness(){
@@ -22,13 +22,14 @@ class Card {
 
 	toHTML(){
 		var str = "";
-		str = 	"<tr>" +
-					"<td>" + this.getFitness().toPrecision(3) + "</td>" +
-					"<td>" + this.technique + "</td>" +
-					"<td>" + this.domination + "</td>" +
-					"<td>" + this.talent.toString() + "</td>" +
-					"<td>" + this.maitrise.toString() + "</td>";
-				"</tr>";
+		str =
+			`<tr>
+				<td> ${this.getFitness().toPrecision(3)} </td>
+				<td> ${this.technique} </td>
+				<td> ${this.domination} </td>
+				<td> ${this.talent.toString()} </td>
+				<td> ${this.maitrise.toString()} </td>
+			</tr>`;
 		return str;
 	}
 }

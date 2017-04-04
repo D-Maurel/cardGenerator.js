@@ -4,7 +4,7 @@ class CardGenerator {
 		this.pContexte = .2;
 		this.pCout = .1;
 		this.pEmpty = .7;
-		this.data = new Data();
+		this.data = window.data;
 	}
 
 	generateCard(){

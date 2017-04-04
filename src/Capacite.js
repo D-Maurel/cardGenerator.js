@@ -5,7 +5,7 @@ class Capacite {
         this.condition = "";
         this.effet = "";
         this.value = "";
-        this.data = new Data();
+        this.data = window.data;
     }
 
     getFitness(){
