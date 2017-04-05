@@ -1,0 +1,12 @@
+{
+  "name": "cardGenerator.js",
+  "version": "1.0.0",
+  "main": "index.html",
+  "repository": "https://github.com/Kahsius/cardGenerator.js",
+  "author": "Kahsius <cassius81.geek@free.fr>",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  }
+}
